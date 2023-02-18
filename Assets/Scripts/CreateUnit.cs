@@ -27,6 +27,8 @@ public class CreateUnit : UI_Base
     public List<Tile_Unit> Tile_Units = new List<Tile_Unit>();
 
     public Text CurrentTileText;
+
+
     public override void Init()
     {
         GameObject Tile = GameObject.Find("Tile").gameObject;

@@ -13,11 +13,15 @@ public class MainSystem : MonoBehaviour
 
     public Image BackGroundImage;
 
+
+
     // Start is called before the first frame update
     void Start()
     {
         SceneManager = GetComponent<sceneManager>();
         GameManager = GetComponent<GameManager>();
+
+
     }
 
     // Update is called once per frame
@@ -25,4 +29,6 @@ public class MainSystem : MonoBehaviour
     {
         
     }
+
+
 }

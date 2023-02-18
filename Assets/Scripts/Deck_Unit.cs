@@ -18,7 +18,7 @@ public class Deck_Unit : UI_Base
     private bool m_IsOneClick = false;
     private double m_Timer = 0;
 
-
+    public int PlayerKind = 0;
 
     public override void Init()
     {
@@ -98,9 +98,13 @@ public class Deck_Unit : UI_Base
 
             case 1:
 
+
                 ColorUtility.TryParseHtmlString("#ffffff", out color);
                 Tile_Unit.gameObject.GetComponent<Image>().color = color;
 
+                // 마나가 없으면 리턴한다
+                if (MainSystem.GameManager.Mana < 1)
+                    break;
 
                 GameObject Player = Instantiate(Resources.Load<GameObject>("Prefab/Player"));
                 PlayerController A = Player.GetComponent<PlayerController>();
@@ -108,14 +112,18 @@ public class Deck_Unit : UI_Base
 
                 A.templateId = playerID;
                 A.speed = 10;
-                A.atk = 10;
+                A.atk = 2 * PlayerKind; // 2 4 6
                 A.id = MainSystem.GameManager.Units.Count;
                 A.position = CurrentTile;
+                A.Hp = 10 * PlayerKind;
+                A.maxHp = A.Hp;
+                A.atkSpeed = 1 ;
 
                 MainSystem.GameManager.Units.Add(A);
                 MainSystem.GameManager.Players.Add(A);
 
                 A.Init();
+                MainSystem.GameManager.Mana -= 1;
 
                 //ColorUtility.TryParseHtmlString("#6B66F7", out color);
                 //Tile_Unit.gameObject.GetComponent<Image>().color = color;
@@ -124,12 +132,11 @@ public class Deck_Unit : UI_Base
             default:
                 break;
         }
-
-
-
-
-
     }
+
+
+
+
 
     // Start is called before the first frame update
     void Start()
