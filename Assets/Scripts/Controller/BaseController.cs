@@ -248,9 +248,9 @@ public class BaseController : MonoBehaviour
 
 
         if(this.GetType() == typeof(MonsterController))
-            transform.position = Tile_Unit.transform.position + new Vector3(margin, 0,0);
+            transform.position = Tile_Unit.transform.position + new Vector3(margin, 0,0) + new Vector3(0,0,id); // 늦게오면 뒤에 오게
         else if (this.GetType() == typeof(PlayerController))
-            transform.position = Tile_Unit.transform.position;
+            transform.position = Tile_Unit.transform.position + new Vector3(0, 0, id); // 늦게오면 뒤에 오게
 
         // 자기 ID에 따라 색깔을 다르게 해준다.
         //switch (templateId)

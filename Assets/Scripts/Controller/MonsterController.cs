@@ -202,7 +202,7 @@ public class MonsterController : BaseController
                     // 위치를 넥서스 앞으로
 
                     Tile_Unit Tile_Unit = MainSystem.GameManager.CreateUnit.Tile_Units[position];
-                    transform.position = Tile_Unit.transform.position + new Vector3(-margin, 0, 0);
+                    transform.position = Tile_Unit.transform.position + new Vector3(-margin, 0, 0) + new Vector3(0, 0, id); // 늦게오면 뒤에 오게;
 
 
                 }
@@ -254,7 +254,7 @@ public class MonsterController : BaseController
                     // 위치를 넥서스 앞으로
 
                     Tile_Unit Tile_Unit = MainSystem.GameManager.CreateUnit.Tile_Units[position];
-                    transform.position = Tile_Unit.transform.position + new Vector3(-margin, 0, 0);
+                    transform.position = Tile_Unit.transform.position + new Vector3(-margin, 0, 0) + new Vector3(0, 0, id); // 늦게오면 뒤에 오게;
                 }
 
 

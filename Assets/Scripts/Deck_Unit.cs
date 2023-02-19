@@ -109,15 +109,17 @@ public class Deck_Unit : UI_Base
                 GameObject Player = Instantiate(Resources.Load<GameObject>("Prefab/Player"));
                 PlayerController A = Player.GetComponent<PlayerController>();
 
+                Data.PlayerData playerData = null;
+                Managers.Data.PlayerDict.TryGetValue(PlayerKind, out playerData);
 
                 A.templateId = playerID;
-                A.speed = 10;
-                A.atk = 2 * PlayerKind; // 2 4 6
+                A.speed = playerData.stat.speed;
+                A.atk = playerData.stat.attack;
                 A.id = MainSystem.GameManager.Units.Count;
                 A.position = CurrentTile;
-                A.Hp = 10 * PlayerKind;
-                A.maxHp = A.Hp;
-                A.atkSpeed = 1 ;
+                A.Hp = playerData.stat.maxHp;
+                A.maxHp = playerData.stat.maxHp;
+                A.atkSpeed = playerData.stat.atkSpeed;
 
                 MainSystem.GameManager.Units.Add(A);
                 MainSystem.GameManager.Players.Add(A);

@@ -100,7 +100,11 @@ public class GameManager : MonoBehaviour
 
     public void CreateDeck()
     {
-        int PlayerCount = 3;
+
+        //Data.PlayerData playerData = null;
+        //Managers.Data.PlayerDict.TryGetValue(1, out playerData);
+
+        int PlayerCount = Managers.Data.PlayerDict.Count;
 
         for (int i = 0; i < PlayerCount; i++)
         {
@@ -128,7 +132,7 @@ public class GameManager : MonoBehaviour
 
         PlayButton = GameObject.Find("Canvas/Bt_Play").gameObject;
 
-        GameClearPopup = GameObject.Find("Canvas/GameClear");
+        GameClearPopup = GameObject.Find("HighCanvas/GameClear");
         GameClearPopup.gameObject.SetActive(false);
 
         GoldText = GameObject.Find("Canvas/Info/Src_Gold").GetComponent<Text>();
@@ -183,7 +187,10 @@ public class GameManager : MonoBehaviour
 
     IEnumerator CoPlayWave()
     {
-        
+
+
+        Data.MonsterData monsterData = null;
+        Managers.Data.MonsterDict.TryGetValue(1, out monsterData);
 
         for (int i = 0; i < 5; i++)
         {
@@ -194,17 +201,26 @@ public class GameManager : MonoBehaviour
 
             MonsterController M = Monster.GetComponent<MonsterController>();
 
-            M.templateId = 9000;
-            M.speed = 5;
+            // M.templateId = 9000;
+            //M.speed = 5;
+            //M.id = Units.Count;
+            //M.position = 9 + i * 10;
+            //M.Hp = 5;
+            //M.maxHp = M.Hp;
+            //M.atk = 1;
+            //M.atkSpeed = 2;
+
+            M.speed = monsterData.stat.speed;
             M.id = Units.Count;
             M.position = 9 + i * 10;
-            M.Hp = 5;
-            M.maxHp = M.Hp;
-            M.atk = 1;
-            M.atkSpeed = 2;
+            M.Hp = monsterData.stat.maxHp;
+            M.maxHp = monsterData.stat.maxHp;
+            M.atk = monsterData.stat.attack;
+            M.atkSpeed = monsterData.stat.atkSpeed;
 
+            Units.Add(M);
             Monsters.Add(M);
-
+         
             M.Init();
         }        
 

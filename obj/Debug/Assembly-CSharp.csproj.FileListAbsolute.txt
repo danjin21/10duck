@@ -614,3 +614,8 @@ D:\10duck\10duck\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
 D:\10duck\10duck\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 D:\10duck\10duck\obj\Debug\Assembly-CSharp.dll
 D:\10duck\10duck\obj\Debug\Assembly-CSharp.pdb
+D:\10duck\10duck\Temp\bin\Debug\Google.Protobuf.dll
+D:\10duck\10duck\Temp\bin\Debug\Newtonsoft.Json.dll
+D:\10duck\10duck\Temp\bin\Debug\System.Buffers.dll
+D:\10duck\10duck\Temp\bin\Debug\System.Memory.dll
+D:\10duck\10duck\Temp\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll

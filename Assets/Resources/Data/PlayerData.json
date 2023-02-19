@@ -1,0 +1,60 @@
+﻿{
+
+
+  "players": [
+    {
+      "id": "1",
+      "name": "소드덕",
+      "stat": {
+        "level": "1",
+        "maxHp": "8",
+        "attack": "2",
+        "speed": "0.0",
+        "atkSpeed": "0.5",
+        "range": "1",
+        "def": "0",
+      },
+      "rewards": [
+        {
+          "probability": "30",
+          "itemId": "99999",
+          "count": "30"
+        },
+        {
+          "probability": "50",
+          "itemId": "100001",
+          "count": "1"
+        }
+      ],
+      "HitSoundPath": "Sounds/Hit/2"
+    },
+    {
+      "id": "2",
+      "name": "실드덕",
+      "stat": {
+        "level": "1",
+        "maxHp": "20",
+        "attack": "1",
+        "speed": "0.0",
+        "atkSpeed": "1",
+        "range": "1",
+        "def": "1",
+      },
+      "rewards": [
+        {
+          "probability": "30",
+          "itemId": "99999",
+          "count": "30"
+        },
+        {
+          "probability": "50",
+          "itemId": "100001",
+          "count": "1"
+        }
+      ],
+      "HitSoundPath": "Sounds/Hit/2"
+    }
+
+
+  ]
+}

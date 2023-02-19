@@ -35,7 +35,7 @@ public class NexusController : MonoBehaviour
     public virtual void Init()
     {
         MainSystem = GameObject.Find("MainSystem").gameObject.GetComponent<MainSystem>();
-        GameOverPopup = GameObject.Find("Canvas/GameOver");
+        GameOverPopup = GameObject.Find("HighCanvas/GameOver");
 
 
         HpText = gameObject.transform.GetChild(1).GetComponent<Text>();
